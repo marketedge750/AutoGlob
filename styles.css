@@ -508,6 +508,17 @@ a{ color: inherit; text-decoration: none; }
 
 .inline-ad{ margin: 36px 0; }
 
+.prose figure{ margin: 34px 0; }
+.prose figure img{ width:100%; border-radius: var(--radius); aspect-ratio: 3/2; object-fit: cover; }
+.prose figcaption{
+  margin-top: 10px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.3px;
+  color: var(--text-faint);
+  text-align: center;
+}
+
 .article-footer{
   margin-top: 44px;
   padding-top: 24px;
