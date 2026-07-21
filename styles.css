@@ -63,8 +63,7 @@ a{ color: inherit; text-decoration: none; }
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(10,10,10,0.92);
-  backdrop-filter: blur(10px);
+  background: var(--bg);
   border-bottom: 1px solid var(--line);
 }
 
@@ -146,12 +145,15 @@ a{ color: inherit; text-decoration: none; }
   .main-nav{
     position: fixed;
     inset: 72px 0 0 0;
-    background: var(--bg);
+    z-index: 60;
+    background-color: var(--bg);
+    opacity: 1;
     flex-direction: column;
     align-items: flex-start;
     padding: 24px;
     gap: 20px;
     border-top: 1px solid var(--line);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.5);
     transform: translateX(100%);
     transition: transform .25s ease;
   }
