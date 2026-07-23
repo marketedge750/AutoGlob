@@ -92,6 +92,9 @@ a{ color: inherit; text-decoration: none; }
   letter-spacing: -0.3px;
   color: var(--text);
   line-height: 1;
+  font-style: italic;
+  transform: skewX(-6deg);
+  display: inline-block;
 }
 .brand-word span{ color: var(--cyan); }
 
@@ -301,7 +304,7 @@ a{ color: inherit; text-decoration: none; }
   align-items:center;
   gap: 10px;
   background: var(--cyan);
-  color: #04121f;
+  color: var(--bg);
   font-weight: 700;
   font-size: 14px;
   letter-spacing: 0.3px;
@@ -314,10 +317,27 @@ a{ color: inherit; text-decoration: none; }
 
 @media (max-width: 860px){
   .hero{ min-height: 0; padding: 0; }
-  .hero-photo{ position: static; width: 100%; height: 240px; }
-  .hero-stripes{ display: none; }
+  .hero-photo{ position: static; width: 100%; height: 260px; }
+  .hero-stripes{
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 260px;
+    overflow: hidden;
+  }
+  .hero-stripes .beam{
+    top: -30%;
+    width: 46px;
+    height: 170%;
+  }
+  .hero-stripes .beam.beam-red{ left: 42%; }
+  .hero-stripes .beam.beam-cyan{ left: 50%; }
+  .hero-stripes .tick{ height: 40px; }
+  .hero-stripes .tick.tick-red{ left: 28%; top: 55%; }
+  .hero-stripes .tick.tick-cyan{ left: 32%; top: 62%; }
   .hero-inner{ max-width: none; padding: 32px 0; }
   .hero h1{ font-size: 32px; }
+  .hero-photo::before{ background: linear-gradient(180deg, transparent 40%, var(--bg) 100%); }
 }
 
 /* ---------- Layout: content + sidebar ---------- */
@@ -401,7 +421,7 @@ a{ color: inherit; text-decoration: none; }
   position: relative;
   aspect-ratio: 16/10;
   overflow: hidden;
-  background: #0e1f34;
+  background: var(--bg-elevated);
 }
 
 .card-media img{ width:100%; height:100%; object-fit: cover; }
@@ -418,10 +438,10 @@ a{ color: inherit; text-decoration: none; }
   font-weight: 700;
   letter-spacing: 0.6px;
   text-transform: uppercase;
-  color: #fff;
+  color: var(--white);
 }
 .badge-pill.b-red{ background: var(--red); }
-.badge-pill.b-cyan{ background: var(--cyan); color: #04121f; }
+.badge-pill.b-cyan{ background: var(--cyan); color: var(--bg); }
 
 .card-body{ padding: 16px 18px 18px; display:flex; flex-direction:column; gap:8px; flex:1; }
 
@@ -563,7 +583,7 @@ a{ color: inherit; text-decoration: none; }
   justify-content:center;
   gap: 8px;
   background: var(--cyan);
-  color: #04121f;
+  color: var(--bg);
   font-weight: 700;
   font-size: 13.5px;
   padding: 10px 16px;
@@ -656,7 +676,7 @@ a{ color: inherit; text-decoration: none; }
   margin: 40px 0 16px;
 }
 
-.prose p{ margin: 0 0 22px; color: #dde3ea; }
+.prose p{ margin: 0 0 22px; color: var(--text); }
 .prose p:first-of-type::first-letter{
   font-family: var(--font-display);
   font-size: 58px;
@@ -719,7 +739,7 @@ a{ color: inherit; text-decoration: none; }
 
 .static-page .prose{ max-width: 72ch; }
 .static-page .prose h2{ font-size: 22px; margin-top: 36px; }
-.static-page .prose ul{ color:#dde3ea; padding-left: 20px; }
+.static-page .prose ul{ color: var(--text); padding-left: 20px; }
 .static-page .prose li{ margin-bottom: 10px; }
 .static-page .prose p:first-of-type::first-letter{ all: unset; }
 
